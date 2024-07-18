@@ -12,6 +12,8 @@ class SX1509FloatOutputChannel : public output::FloatOutput, public Component {
  public:
   void set_parent(SX1509Component *parent) { this->parent_ = parent; }
   void set_pin(uint8_t pin) { pin_ = pin; }
+  void setup_blink(uint8_t t_on, uint8_t t_off, uint8_t on_intensity, uint8_t off_intensity, uint8_t t_rise,
+                   uint8_t t_fall);
   void setup() override;
   void dump_config() override;
   float get_setup_priority() const override { return setup_priority::HARDWARE; }
